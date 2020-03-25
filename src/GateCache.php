@@ -71,6 +71,6 @@ class GateCache extends Gate implements GateContract
      */
     protected function getHash($ability, $arguments)
     {
-        return hash('md5', $ability.json_encode($arguments));
+        return hash('sha1', $ability . serialize($arguments));
     }
 }
